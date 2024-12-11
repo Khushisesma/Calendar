@@ -1,0 +1,20 @@
+.calendar-page {
+    text-align: center;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 0px;
+  }
+
+  .calendar-header h1{
+    font-size: 24px;
+    margin: 0px;
+  }
+  
+  .cal-button{
+    margin: 0px;
+  }

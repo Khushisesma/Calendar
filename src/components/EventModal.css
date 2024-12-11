@@ -1,0 +1,150 @@
+/* Sidebar Styles */
+.event-modal-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40%; /* 40% for the sidebar */
+    max-width: 400px; /* Maximum width of the sidebar */
+    background-color: #f4f4f9;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    font-family: 'Iowan Old Style', serif;
+    transition: transform 0.3s ease; /* Smooth transition for showing/hiding the sidebar */
+}
+
+/* For hiding the sidebar when it's closed */
+.event-modal-sidebar.closed {
+    transform: translateX(100%); /* Move sidebar out of view */
+}
+
+/* Modal Content Styles */
+.modal-content {
+    overflow-y: auto;
+    padding: 0px;
+}
+
+.modal-content h2 {
+    margin: 8px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin: 4px 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal-content ul {
+    margin: 16px 0px;
+    font-size: 16px;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.modal-content li {
+    font-size: 16px;
+    padding: 8px;
+    position: relative; /* Ensure relative positioning for pseudo-element */
+}
+
+.modal-content li:not(:last-child)::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #ccc; /* Adjust color as needed */
+    margin-top: 16px; /* Space between item and line */
+}
+
+.existing-events,
+.add-event {
+    border: solid 1px rgb(183, 182, 182);
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background-color: #fff; /* Add background color for better contrast */
+}
+
+/* Buttons */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(155, 79, 79);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #cf3939;
+    transition: background-color 0.2s;
+}
+
+/* Input Styles */
+.event-name,
+.event-start-time,
+.event-end-time,
+.event-work-type,
+.event-des {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-name input,
+.event-start-time input,
+.event-end-time input,
+.event-work-type select,
+.event-des textarea {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: solid 1px black;
+    font-size: 14px;
+}
+
+/* Event Work Type Dropdown */
+.event-work-type select {
+    background-color: #f9f9f9;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Textarea */
+.event-des textarea {
+    resize: none; /* Prevent resizing for better UI */
+    min-height: 60px;
+}
+
+/* Buttons Group */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Event Time Inputs */
+.event-time {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .event-modal-sidebar {
+        width: 100%;
+        max-width: none; /* Full width on mobile */
+    }
+
+    .event-modal-sidebar.closed {
+        transform: translateX(100%);
+    }
+}
