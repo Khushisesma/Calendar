@@ -19,13 +19,12 @@ function CalendarGrid({ currentMonth, events, setEvents }) {
     const startOfMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1);
     const endOfMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0);
 
-    const startDay = startOfMonth.getDay(); // Day of the week (0 = Sunday, 6 = Saturday)
+    const startDay = startOfMonth.getDay();
     const daysInMonth = endOfMonth.getDate();
 
-    // Fill calendar grid with empty cells before the first day
     const calendarDays = [];
     for (let i = 0; i < startDay; i++) {
-      calendarDays.push(null); // Empty cell
+      calendarDays.push(null);
     }
 
     // Fill calendar grid with days of the month
@@ -65,7 +64,6 @@ function CalendarGrid({ currentMonth, events, setEvents }) {
         <div className="calendar-dates">
           {calendarDays.map((day, index) => {
             if (!day) {
-              // Render empty cell for days before the first of the month
               return <div className="calendar-day empty" key={index}></div>;
             }
 

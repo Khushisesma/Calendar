@@ -6,7 +6,7 @@ function EventModal({ selectedDate, onClose, selectedEvents, setEvents }) {
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [description, setDescription] = useState("");
-  const [workType, setWorkType] = useState("Work"); // Default to "Work"
+  const [workType, setWorkType] = useState("Work"); 
   const [editingIndex, setEditingIndex] = useState(null);
   const [searchKeyword, setSearchKeyword] = useState("");
   const [error, setError] = useState("");
@@ -17,7 +17,7 @@ function EventModal({ selectedDate, onClose, selectedEvents, setEvents }) {
 
     // Validate for overlapping events
     const isOverlap = selectedEvents.some((event, index) => {
-      if (index === editingIndex) return false; // Ignore the event being edited
+      if (index === editingIndex) return false;
       const existingStart = event.startTime;
       const existingEnd = event.endTime;
       return (

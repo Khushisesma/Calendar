@@ -4,8 +4,8 @@
     top: 0;
     right: 0;
     height: 100%;
-    width: 40%; /* 40% for the sidebar */
-    max-width: 400px; /* Maximum width of the sidebar */
+    width: 40%;
+    max-width: 400px;
     background-color: #f4f4f9;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -13,15 +13,13 @@
     flex-direction: column;
     z-index: 1000;
     font-family: 'Iowan Old Style', serif;
-    transition: transform 0.3s ease; /* Smooth transition for showing/hiding the sidebar */
+    transition: transform 0.3s ease; 
 }
 
-/* For hiding the sidebar when it's closed */
 .event-modal-sidebar.closed {
-    transform: translateX(100%); /* Move sidebar out of view */
+    transform: translateX(100%);
 }
 
-/* Modal Content Styles */
 .modal-content {
     overflow-y: auto;
     padding: 0px;
@@ -50,15 +48,15 @@
 .modal-content li {
     font-size: 16px;
     padding: 8px;
-    position: relative; /* Ensure relative positioning for pseudo-element */
+    position: relative;
 }
 
 .modal-content li:not(:last-child)::after {
     content: "";
     display: block;
     height: 1px;
-    background-color: #ccc; /* Adjust color as needed */
-    margin-top: 16px; /* Space between item and line */
+    background-color: #ccc; 
+    margin-top: 16px;
 }
 
 .existing-events,
@@ -67,10 +65,9 @@
     padding: 8px 16px;
     border-radius: 8px;
     margin-bottom: 8px;
-    background-color: #fff; /* Add background color for better contrast */
+    background-color: #fff; 
 }
 
-/* Buttons */
 button {
     margin-top: 10px;
     padding: 10px;
@@ -88,8 +85,7 @@ button:hover {
     transition: background-color 0.2s;
 }
 
-/* Input Styles */
-.event-name,
+.event-name,.search-events,
 .event-start-time,
 .event-end-time,
 .event-work-type,
@@ -99,7 +95,7 @@ button:hover {
     flex-direction: column;
 }
 
-.event-name input,
+.event-name input,.search-events input,
 .event-start-time input,
 .event-end-time input,
 .event-work-type select,
@@ -110,41 +106,26 @@ button:hover {
     font-size: 14px;
 }
 
-/* Event Work Type Dropdown */
 .event-work-type select {
     background-color: #f9f9f9;
     appearance: none;
     cursor: pointer;
 }
 
-/* Textarea */
 .event-des textarea {
-    resize: none; /* Prevent resizing for better UI */
+    resize: none; 
     min-height: 60px;
 }
 
-/* Buttons Group */
 .buttons {
     display: flex;
     justify-content: center;
     gap: 6px;
 }
 
-/* Event Time Inputs */
 .event-time {
     display: flex;
     justify-content: space-between;
     gap: 8px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .event-modal-sidebar {
-        width: 100%;
-        max-width: none; /* Full width on mobile */
-    }
-
-    .event-modal-sidebar.closed {
-        transform: translateX(100%);
-    }
-}
